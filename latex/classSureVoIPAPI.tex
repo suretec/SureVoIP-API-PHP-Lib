@@ -1,0 +1,268 @@
+\hypertarget{classSureVoIPAPI}{\section{Sure\-Vo\-I\-P\-A\-P\-I Class Reference}
+\label{classSureVoIPAPI}\index{Sure\-Vo\-I\-P\-A\-P\-I@{Sure\-Vo\-I\-P\-A\-P\-I}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSureVoIPAPI_ad17f971dc98eaa556b2f22e1ebb12838}{\-\_\-\-\_\-construct} (\$username, \$password, \$url= 'https\-://api.\-surevoip.\-co.\-uk')
+\item 
+\hyperlink{classSureVoIPAPI_a50f69f05636659ea39e4c1b75063aa46}{request} (\$service, \$data, \$success\-\_\-http\-\_\-codes=array(200, 201), \$action= 'P\-O\-S\-T')
+\item 
+\hyperlink{classSureVoIPAPI_ab57b499c8308c56ff6f16c5e690ca36d}{customer\-Create} (\$data)
+\item 
+\hyperlink{classSureVoIPAPI_ab5c711325b56827f817117314f247022}{invoice\-Create} (\$customer, \$data)
+\item 
+\hyperlink{classSureVoIPAPI_a092d0a53026405ed030c3ed804510e89}{number\-Provision} (\$customer, \$data)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSureVoIPAPI_af1d1e6ac2ca47cc85fcdaa8dd2dedc20}{http\-\_\-parse\-\_\-response} (\$response)
+\item 
+\hyperlink{classSureVoIPAPI_a03dfd1203d791e69c252740f71a63ba8}{validate\-\_\-required\-\_\-args} (\$data, \$args, \&\$missing\-\_\-args)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classSureVoIPAPI_a567ba8e7859cce0a7821da32562bbc5e}{{\bfseries \$user\-\_\-agent} = \char`\"{}Sure\-Vo\-I\-P A\-P\-I P\-H\-P Lib\char`\"{}}\label{classSureVoIPAPI_a567ba8e7859cce0a7821da32562bbc5e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSureVoIPAPI_ad17f971dc98eaa556b2f22e1ebb12838}{\index{Sure\-Vo\-I\-P\-A\-P\-I@{Sure\-Vo\-I\-P\-A\-P\-I}!\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}}
+\index{\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}!SureVoIPAPI@{Sure\-Vo\-I\-P\-A\-P\-I}}
+\subsubsection[{\-\_\-\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}Sure\-Vo\-I\-P\-A\-P\-I\-::\-\_\-\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{}]{\$username, }
+\item[{}]{\$password, }
+\item[{}]{\$url = {\ttfamily 'https\-://api.surevoip.co.uk'}}
+\end{DoxyParamCaption}
+)}}\label{classSureVoIPAPI_ad17f971dc98eaa556b2f22e1ebb12838}
+Initialize an instance of a Sure\-Vo\-Ip\-A\-P\-I object
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$username} & Sure\-Vo\-I\-P\-Api username \\
+\hline
+{\em \$password} & Sure\-Vo\-I\-P\-Api password \\
+\hline
+{\em \$url} & (optional) Sure\-Vo\-I\-P\-Api U\-R\-L -\/ defaults to \href{https://api.surevoip.co.uk}{\tt https\-://api.\-surevoip.\-co.\-uk} \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSureVoIPAPI_ab57b499c8308c56ff6f16c5e690ca36d}{\index{Sure\-Vo\-I\-P\-A\-P\-I@{Sure\-Vo\-I\-P\-A\-P\-I}!customer\-Create@{customer\-Create}}
+\index{customer\-Create@{customer\-Create}!SureVoIPAPI@{Sure\-Vo\-I\-P\-A\-P\-I}}
+\subsubsection[{customer\-Create}]{\setlength{\rightskip}{0pt plus 5cm}Sure\-Vo\-I\-P\-A\-P\-I\-::customer\-Create (
+\begin{DoxyParamCaption}
+\item[{}]{\$data}
+\end{DoxyParamCaption}
+)}}\label{classSureVoIPAPI_ab57b499c8308c56ff6f16c5e690ca36d}
+Creates a customer
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$data} & An associative array with the following elements\-:
+\begin{DoxyItemize}
+\item (required) 'firstname'
+\item (required) 'lastname'
+\item (required) 'email'
+\item (required) 'phone'
+\item (required) 'address'
+\item (required) 'state'
+\item (required) 'city'
+\item (required) 'postcode'
+\item (required) 'country'
+\item (required) 'company\-\_\-website'
+\item (optional) 'company\-\_\-name'
+\item (optional) 'fax'
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array An associative array of the following elements
+\begin{DoxyItemize}
+\item 'uri'\-: string The U\-R\-I of the newly created customer
+\item 'id'\-: integer The I\-D of the newly created customer
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & In case of an error, and Exception object will be thrown with a descriptive error message. For H\-T\-T\-P related errors, the H\-T\-T\-P code will be included in the Exception's code element \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classSureVoIPAPI_af1d1e6ac2ca47cc85fcdaa8dd2dedc20}{\index{Sure\-Vo\-I\-P\-A\-P\-I@{Sure\-Vo\-I\-P\-A\-P\-I}!http\-\_\-parse\-\_\-response@{http\-\_\-parse\-\_\-response}}
+\index{http\-\_\-parse\-\_\-response@{http\-\_\-parse\-\_\-response}!SureVoIPAPI@{Sure\-Vo\-I\-P\-A\-P\-I}}
+\subsubsection[{http\-\_\-parse\-\_\-response}]{\setlength{\rightskip}{0pt plus 5cm}Sure\-Vo\-I\-P\-A\-P\-I\-::http\-\_\-parse\-\_\-response (
+\begin{DoxyParamCaption}
+\item[{}]{\$response}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classSureVoIPAPI_af1d1e6ac2ca47cc85fcdaa8dd2dedc20}
+Parses an H\-T\-T\-P response, extracts both H\-T\-T\-P return code and content as well as each header as part of the returned associative array.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$response} & The full H\-T\-T\-P response \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array An associative array with its keys being one of each H\-T\-T\-P headers, as well as two special elements\-:
+\begin{DoxyItemize}
+\item 'H\-T\-T\-P'\-: An associative array from the H\-T\-T\-P Status-\/line of the following elements\-:
+\begin{DoxyItemize}
+\item 'version'\-: H\-T\-T\-P protocol version
+\item 'code'\-: H\-T\-T\-P return code
+\item 'reason'\-: H\-T\-T\-P reason phrase
+\end{DoxyItemize}
+\item 'Content'\-: The content of the H\-T\-T\-P response (if any) 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{classSureVoIPAPI_ab5c711325b56827f817117314f247022}{\index{Sure\-Vo\-I\-P\-A\-P\-I@{Sure\-Vo\-I\-P\-A\-P\-I}!invoice\-Create@{invoice\-Create}}
+\index{invoice\-Create@{invoice\-Create}!SureVoIPAPI@{Sure\-Vo\-I\-P\-A\-P\-I}}
+\subsubsection[{invoice\-Create}]{\setlength{\rightskip}{0pt plus 5cm}Sure\-Vo\-I\-P\-A\-P\-I\-::invoice\-Create (
+\begin{DoxyParamCaption}
+\item[{}]{\$customer, }
+\item[{}]{\$data}
+\end{DoxyParamCaption}
+)}}\label{classSureVoIPAPI_ab5c711325b56827f817117314f247022}
+Creates an invoice
+
+
+\begin{DoxyParams}[1]{Parameters}
+integer & {\em \$customer} & Customer I\-D on the Sure\-Vo\-I\-P A\-P\-I obtained from create\-Customer()\\
+\hline
+array & {\em \$data} & An associative array with the following elements\-:
+\begin{DoxyItemize}
+\item (optional) 'invoice\-\_\-number'\-: integer for invoice number, used if present, auto-\/generated if not
+\item (optional) 'amount'\-: Float for invoice total, This marks the invoice as P\-A\-I\-D using this amount
+\item (required) 'line\-\_\-items' An associative array of the following elements
+\begin{DoxyItemize}
+\item (optional) 'vat\-\_\-rate'\-: Override the system default, Float -\/ used if present
+\item (required) 'quantity'\-: Number of items in line item, Float
+\item (required) 'price' Price of item, Float
+\item (required) 'description' Full text, Always enter something
+\item (optional) 'vat\-\_\-amount' Override the system default, Float -\/ used if present
+\end{DoxyItemize}
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array An associative array of the following elements
+\begin{DoxyItemize}
+\item 'uri'\-: string The U\-R\-I of the newly created customer
+\item 'id'\-: integer The I\-D of the newly created customer
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & In case of an error, and Exception object will be thrown with a descriptive error message. For H\-T\-T\-P related errors, the H\-T\-T\-P code will be included in the Exception's code element \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classSureVoIPAPI_a092d0a53026405ed030c3ed804510e89}{\index{Sure\-Vo\-I\-P\-A\-P\-I@{Sure\-Vo\-I\-P\-A\-P\-I}!number\-Provision@{number\-Provision}}
+\index{number\-Provision@{number\-Provision}!SureVoIPAPI@{Sure\-Vo\-I\-P\-A\-P\-I}}
+\subsubsection[{number\-Provision}]{\setlength{\rightskip}{0pt plus 5cm}Sure\-Vo\-I\-P\-A\-P\-I\-::number\-Provision (
+\begin{DoxyParamCaption}
+\item[{}]{\$customer, }
+\item[{}]{\$data}
+\end{DoxyParamCaption}
+)}}\label{classSureVoIPAPI_a092d0a53026405ed030c3ed804510e89}
+Provisions a number
+
+
+\begin{DoxyParams}[1]{Parameters}
+integer & {\em \$customer} & Customer I\-D on the Sure\-Vo\-I\-P A\-P\-I obtained from create\-Customer()\\
+\hline
+array & {\em \$data} & An associative array with the following elements\-:
+\begin{DoxyItemize}
+\item (required) 'numbers' An associative array of the following elements
+\begin{DoxyItemize}
+\item (required) 'number'\-: The number to provision in international format i.\-e. 44113xxxxxxx
+\item (required) 'destination'\-: The destination of the number, number where number has only the area code and number and the destination will depend of the type of provisioning. i.\-e. \href{mailto:0113xxxxxxx@office.suretecsystems.com}{\tt 0113xxxxxxx@office.\-suretecsystems.\-com}
+\item (required) 'activated' Whether the number should be active or not
+\end{DoxyItemize}
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array An associative array of the following elements
+\begin{DoxyItemize}
+\item 'numbers'\-: array An associative array of the following elements
+\begin{DoxyItemize}
+\item 'location'\-: string The U\-R\-I of the provisioned number
+\item 'number'\-: string The provisioned number
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & In case of an error, and Exception object will be thrown with a descriptive error message. For H\-T\-T\-P related errors, the H\-T\-T\-P code will be included in the Exception's code element \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classSureVoIPAPI_a50f69f05636659ea39e4c1b75063aa46}{\index{Sure\-Vo\-I\-P\-A\-P\-I@{Sure\-Vo\-I\-P\-A\-P\-I}!request@{request}}
+\index{request@{request}!SureVoIPAPI@{Sure\-Vo\-I\-P\-A\-P\-I}}
+\subsubsection[{request}]{\setlength{\rightskip}{0pt plus 5cm}Sure\-Vo\-I\-P\-A\-P\-I\-::request (
+\begin{DoxyParamCaption}
+\item[{}]{\$service, }
+\item[{}]{\$data, }
+\item[{}]{\$success\-\_\-http\-\_\-codes = {\ttfamily array(200,~201)}, }
+\item[{}]{\$action = {\ttfamily 'POST'}}
+\end{DoxyParamCaption}
+)}}\label{classSureVoIPAPI_a50f69f05636659ea39e4c1b75063aa46}
+Performs a request to the Sure\-Vo\-I\-P A\-P\-I
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$service} & The service to perform the request, this should be the U\-R\-I path after the domain\\
+\hline
+array & {\em \$data} & An associative array with data to be sent as J\-S\-O\-N\\
+\hline
+array & {\em \$success} & (optional) An array of H\-T\-T\-P codes that should be considered valid and that won't throw an exception. Defaults to 200 and 201\\
+\hline
+string & {\em \$action} & (optional) The type of request to do, defaults to 'P\-O\-S\-T'\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array An associative array of the following elements
+\begin{DoxyItemize}
+\item 'numbers'\-: array An associative array of the following elements
+\begin{DoxyItemize}
+\item 'location'\-: string The U\-R\-I of the provisioned number
+\item 'number'\-: string The provisioned number
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & In case of an error, and Exception object will be thrown with a descriptive error message. For H\-T\-T\-P related errors, the H\-T\-T\-P code will be included in the Exception's code element \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classSureVoIPAPI_a03dfd1203d791e69c252740f71a63ba8}{\index{Sure\-Vo\-I\-P\-A\-P\-I@{Sure\-Vo\-I\-P\-A\-P\-I}!validate\-\_\-required\-\_\-args@{validate\-\_\-required\-\_\-args}}
+\index{validate\-\_\-required\-\_\-args@{validate\-\_\-required\-\_\-args}!SureVoIPAPI@{Sure\-Vo\-I\-P\-A\-P\-I}}
+\subsubsection[{validate\-\_\-required\-\_\-args}]{\setlength{\rightskip}{0pt plus 5cm}Sure\-Vo\-I\-P\-A\-P\-I\-::validate\-\_\-required\-\_\-args (
+\begin{DoxyParamCaption}
+\item[{}]{\$data, }
+\item[{}]{\$args, }
+\item[{\&}]{\$missing\-\_\-args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classSureVoIPAPI_a03dfd1203d791e69c252740f71a63ba8}
+Validates required elements are present in an associative array
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$data} & The associative array to check \\
+\hline
+array & {\em \$args} & An array of required keys that should be present in the associative array \\
+\hline
+array & {\em \$missing\-\_\-args} & An array of the missing keys \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\-R\-U\-E if all required elements are present, F\-A\-L\-S\-E otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+surevoip.\-php\end{DoxyCompactItemize}
